@@ -33,3 +33,22 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+function menu(items){
+  const menuDiv = document.createElement('div')
+  const menuList =document.createElement('ul')
+  const unorderedList = document.createElement('li')
+
+  menuDiv.classList.add('menu')
+
+  menuDiv.appendChild(menuList)
+  menuList.appendChild(unorderedList)
+
+  menuDiv.textContent = menuItems.forEach(() =>{
+    menuList.appendChild(menu(items))
+  })
+  return menuDiv
+}
+
+const menuBut = document.querySelector('.header')
+
+menuBut.appendChild(menuDiv)

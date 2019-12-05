@@ -112,3 +112,45 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+function content(data){
+
+  const article = document.createElement('div')
+  const h2 = document.createElement('h2')
+  const paragraph = document.createElement('p')
+  const p1 = document.createElement('p')
+  const p2 = document.createElement('p')
+  const p3 = document.createElement('p')
+  const myParagraph = document.createElement('p')
+  const span = document.createElement('span')
+
+  article.classList.add('article')
+  paragraph.classList.add('date')
+  span.classList.add('expandButtton')
+  span.addEventListener('click', () =>{
+    article.classList.toggle('article-open')
+  })
+
+  article.appendChild(h2)
+  article.appendChild(paragraph)
+  article.appendChild(p1,p2,p3,myParagraph)
+  article.appendChild(span)
+
+  h2.textContent = data.title
+  paragraph.textContent = data.date
+  p1.textContent = data.firstParagraph
+  p2.textContent = data.secondParagraph
+  p3.textContent = data.thirdParagraph
+  span.textContent == '\u25bc' ?  span.textContent = '\u25b2' : span.textContent = '\u25bc'
+// '\u25b2'
+
+// '\u25bc'
+  
+  return article
+
+
+}
+const mainDiv = document.querySelector('.articles')
+console.log(mainDiv)
+data.map(element => {
+  mainDiv.appendChild(content(element))
+});
