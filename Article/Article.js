@@ -85,6 +85,11 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Languages and Cultures',
+    date: 'December 4th,2019',
+    firstParagraph: `Forget phrase books or even Google Translate. New translation devices are getting closer to replicating the fantasy of the Babel fish, which in the “Hitchhiker’s Guide to the Galaxy” sits in one’s ear and instantly translates any foreign language into the user’s own.`
   }
 ];
 
@@ -125,7 +130,7 @@ function content(data){
 
   article.classList.add('article')
   paragraph.classList.add('date')
-  span.classList.add('expandButtton')
+  span.classList.add('expandButton')
   span.addEventListener('click', () =>{
     article.classList.toggle('article-open')
   })
@@ -140,6 +145,7 @@ function content(data){
   p1.textContent = data.firstParagraph
   p2.textContent = data.secondParagraph
   p3.textContent = data.thirdParagraph
+  myParagraph.textContent = data.firstParagraph
   span.textContent == '\u25bc' ?  span.textContent = '\u25b2' : span.textContent = '\u25bc'
 // '\u25b2'
 
@@ -150,7 +156,7 @@ function content(data){
 
 }
 const mainDiv = document.querySelector('.articles')
-console.log(mainDiv)
+
 data.map(element => {
   mainDiv.appendChild(content(element))
 });
